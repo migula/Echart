@@ -11,7 +11,6 @@ export default {
   },
   data() {
     return {
-      seriesArr2:[],
       option: {
         tooltip: {
           trigger: "axis",
@@ -31,8 +30,7 @@ export default {
           }
         },
         legend: {
-          // data: ['zhengFaLiang','jiangShuiLiang','pingJunWenDu']
-          data:[]
+          data: []
         },
         xAxis: [
           {
@@ -69,26 +67,58 @@ export default {
           {
             name: "zhengFaLiang",
             type: "bar",
-            // stack: ["zhengFaLiang", "jiangShuiLiang"], //这个只是简单拼在一起,实际效果需要重叠,待解决
-            barGap: "-100%", //添加此配置项即为重叠效果
+            stack: ["蒸发量", "降水量"], //这个只是简单拼在一起,实际效果需要重叠,待解决
             data: [
-             
+              2.0,
+              4.9,
+              7.0,
+              23.2,
+              25.6,
+              76.7,
+              135.6,
+              162.2,
+              32.6,
+              20.0,
+              6.4,
+              3.3
             ]
           },
           {
             name: "jiangShuiLiang",
             type: "bar",
-            // stack: ["zhengFaLiang", "jiangShuiLiang"], //这个只是简单拼在一起,实际效果需要重叠,待解决
-            // stack: ["蒸发量", "降水量"], //这个只是简单拼在一起,实际效果需要重叠,待解决
-            barGap: "-100%", //添加此配置项即为重叠效果
-            data: []
+            stack: ["蒸发量", "降水量"], //这个只是简单拼在一起,实际效果需要重叠,待解决
+            data: [
+              2.6,
+              5.9,
+              9.0,
+              26.4,
+              28.7,
+              70.7,
+              175.6,
+              182.2,
+              48.7,
+              18.8,
+              6.0,
+              2.3
+            ]
           },
           {
             name: " pingJunWenDu",
             type: "line",
             yAxisIndex: 1,
             data: [
-             
+              2.0,
+              2.2,
+              3.3,
+              4.5,
+              6.3,
+              10.2,
+              20.3,
+              23.4,
+              23.0,
+              16.5,
+              12.0,
+              6.2
             ]
           }
         ]
@@ -116,33 +146,22 @@ export default {
           pingJunWenDu: "2.0,2.2,3.3,4.5,6.3,10.2,20.3,23.4,23.0,16.5,12.0,6.2"
         }
       ];
-      // 图例
       let tempData = data[0];
+    
+      for (let index = 0; index < data.length; index++) {
+        const element = data[0];
+        console.log(element);
+        
+      }
+
       for (let key in tempData) {
         console.log(key, ".....key");
         this.option.legend.data.push(key);
       }
-      // x轴
-     
-      this.option.xAxis[0].data = tempData.Month.split(",");
-      console.log(this.option.xAxis.data, "....this.option.xAxis.data");
+      data.forEach(function(val,index,arr){
 
-      // series
-      let series0=tempData.zhengFaLiang;
-      let series1=tempData.jiangShuiLiang;
-      let series2=tempData.pingJunWenDu;
-      this.option.series[0].data = series0.split(',');
-      this.option.series[1].data = series1.split(',');
-      this.option.series[2].data = series2.split(',');
-
-
-
-      for (let index = 0; index < data.length; index++) {
-        const element = data[0];
-        console.log(element, "e");
-      }
-      data.forEach(function(val, index, arr) {});
-      console.log(tempData.Month, "...m");
+      })
+      console.log(tempData.Month,'...m');
       // this.option.xAxis.data.push(tempData.split(','))
       myChart.setOption(this.option);
     }
