@@ -7,24 +7,50 @@
   <title>Document</title>
 </head>
 <body>
-  <h1>nothing</h1>
+  <h1>very gooooood!!!!!!!!!!</h1>
 </body>
 </html>
 <script>
-let data = [
-  {
-    Month: "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月",
-    zhengFaLiang:
-      " 2.0,4.9,7.0,23.2,25.6,76.7,135.6,162.2,32.6,20.0,6.4,3.3",
-    jiangShuiLiang:
-      "2.6,5.9,9.0,26.4,28.7,70.7,175.6,182.2,48.7,18.8,6.0,2.3",
-    pingJunWenDu: "2.0,2.2,3.3,4.5,6.3,10.2,20.3,23.4,23.0,16.5,12.0,6.2"
-  }
-];
-let tempData = data[0];
-console.log(tempData);
-tempData.forEach(function(val,index,arr){
-  let seriesData= this.option.series.push(val)
-  console.log(seriesData,'...222');
-});
+// let data = [
+//   {
+//     Month: "1月,2月,3月,4月,5月,6月,7月,8月,9月,10月,11月,12月",
+//     zhengFaLiang:
+//       " 2.0,4.9,7.0,23.2,25.6,76.7,135.6,162.2,32.6,20.0,6.4,3.3",
+//     jiangShuiLiang:
+//       "2.6,5.9,9.0,26.4,28.7,70.7,175.6,182.2,48.7,18.8,6.0,2.3",
+//     pingJunWenDu: "2.0,2.2,3.3,4.5,6.3,10.2,20.3,23.4,23.0,16.5,12.0,6.2"
+//   }
+// ];
+// let tempData = data[0];
+// console.log(tempData);
+// tempData.forEach(function(val,index,arr){
+//   let seriesData= this.option.series.push(val)
+//   console.log(seriesData,'...222');
+// });
+
+// 将一个JSon字符串（标准的格式），按照“键”拆分。
+var menuId = [];
+var percode = [];
+var data = [{menuId: "0010", percode : "PZ011"},{menuId : "0011", percode : "PZ012"}];
+for(var i = 0; i<data.length; i++){
+    menuId.push(data[i].menuId);
+}
+
+for(var i = 0; i<data.length; i++){
+    percode.push(data[i].percode);
+}
+console.log("新的json1:"+JSON.stringify(menuId));
+console.log("新的json2:"+JSON.stringify(percode));
+
+// 将一个JSon字符串（标准的格式），按照“键”放到对象里
+// var array=[];
+// for (let i = 0; i < data.length; i++) {
+//   const element = {id:data[i].menuId,code:data[i].percode}
+//   array.push(element)
+  
+// }
+// console.log("新的json数组:"+JSON.stringify(array));
+var result=[{"flag":1,"macId":"2","mbId":0,"userName":"XXX"},{"flag":1,"macId":"1","mbId":1,"userName":"YYY"}];
+var result={"datas":[{"flag":1,"macId":"2","mbId":0,"userName":"XXX"},{"flag":1,"macId":"1","mbId":1,"userName":"YYY"}]};
+
 </script>
