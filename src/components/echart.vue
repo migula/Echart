@@ -33,11 +33,14 @@ export default {
           //   }
           //   return html
           // }
+          // tooltip 提示设置
           formatter: function(params) {
+            // params 返回的传参
+            // marker tooltip的参数
             console.log(params);
             let arr = ["降水量","总量", "蒸发量", "温度"];
-            var res = params[0].name;
-            for (var i = 0, l = params.length; i < l; i++) {
+            var res = params[0].name;//tooltip 的标题
+            for (let i = 0, l = params.length; i < l; i++) {
               res += "<br/>" +params[i].marker+arr[i] + " : " + params[i].value;
             }
             return res;
