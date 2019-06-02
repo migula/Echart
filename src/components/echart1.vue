@@ -56,25 +56,20 @@ export default {
           }
         },
         // legend: {
-        //   data: ["平均温度", "总量", "", "蒸发量", "蒸发量"],
-        //   // name:'\n',
-        //   // left: "center",
-        //   bottom: "-1%",
-
-        //   // selectedMode: false
+        //   // data: ["平均温度", "总量", "蒸发量", "蒸发量"],
         //   // color:['#522689','#256','#896','#854']
-        //   margin: "30px auto 30px auto"
+      
         // },
-        // 图例换行居中
-        legend: [
-
-          { x: "center", data: ["平均温度", "总量"] },
-          {x:'center',top:'5%',data: ["蒸发量",]},
-          {bottom:'5%',}
-          ],
-        // grid: {
-        //   bottom: "5%"
-        // },
+        legend:[
+          {x:'center',
+          // data:["平均温度", "总量", ]
+          },
+          {
+            x:'center',
+            top:'5%',
+            // data:[ "蒸发量", "蒸发量"]
+          }
+        ],
         xAxis: [
           {
             type: "category",
@@ -109,7 +104,7 @@ export default {
           {
             type: "value",
             name: "温度",
-            icon: "square",
+
             axisLabel: {
               formatter: "{value} °C"
             }
@@ -120,7 +115,6 @@ export default {
             name: "蒸发量",
             type: "bar",
             stack: "..",
-            icon: "square",
             color: "red",
             data: [
               2.0,
@@ -141,7 +135,6 @@ export default {
             name: "总量",
             color: "green",
             type: "bar",
-            icon: "square",
             stack: "..",
             data: [
               3.0,
@@ -161,7 +154,6 @@ export default {
           {
             name: "蒸发量",
             type: "bar",
-            icon: "square",
             color: "red",
             stack: "..",
             data: [
